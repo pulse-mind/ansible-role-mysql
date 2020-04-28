@@ -1,6 +1,6 @@
 # Ansible Role: MySQL
 
-[![Build Status](https://travis-ci.org/geerlingguy/ansible-role-mysql.svg?branch=master)](https://travis-ci.org/geerlingguy/ansible-role-mysql)
+[![Build Status](https://travis-ci.org/pulse-mind/ansible-role-mysql.svg?branch=master)](https://travis-ci.org/pulse-mind/ansible-role-mysql)
 
 Installs and configures MySQL or MariaDB server on RHEL/CentOS or Debian/Ubuntu servers.
 
@@ -10,7 +10,7 @@ No special requirements; note that this role requires root access, so either run
 
     - hosts: database
       roles:
-        - role: geerlingguy.mysql
+        - role: pulse-mind.mysql
           become: yes
 
 ## Role Variables
