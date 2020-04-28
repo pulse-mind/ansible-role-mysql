@@ -16,7 +16,7 @@
     name: python2-PyMySQL
     state: present
     enablerepo: "{{ mysql_enablerepo | default(omit, true) }}"
-  
+
 - name: Ensure MySQL Python libraries are installed.
   apt: "name={{ deb_mysql_python_package }} state=present"
 
