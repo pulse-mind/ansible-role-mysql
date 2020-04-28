@@ -11,11 +11,10 @@
   set_fact:
     deb_mysql_python_package: "{% if 'python3' in ansible_python_interpreter|default('') %}python3-mysqldb{% else %}python-mysqldb{% endif %}"
 
-- name: Ensure MySQL Python libraries are installed.
-  yum:
-    name: python-pymysql
+- name: Make sure pymysql is present
+  pip:
+    name: pymysql
     state: present
-    enablerepo: "{{ mysql_enablerepo | default(omit, true) }}"
 
 - name: Ensure MySQL Python libraries are installed.
   apt: "name={{ deb_mysql_python_package }} state=present"
