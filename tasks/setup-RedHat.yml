@@ -11,11 +11,11 @@
     name: python2-PyMySQL
     state: present
     enablerepo: "{{ mysql_enablerepo | default(omit, true) }}"
-  when ansible_distribution_major_version == "8"
+  when: ansible_distribution_major_version == 8
 
 - name: Ensure MySQL Python libraries are installed.
   yum:
     name: MySQL-python
     state: present
     enablerepo: "{{ mysql_enablerepo | default(omit, true) }}"
-  when ansible_distribution_major_version == "7" or ansible_distribution_major_version == "6"
+  when: ansible_distribution_major_version == 7 or ansible_distribution_major_version == 6
