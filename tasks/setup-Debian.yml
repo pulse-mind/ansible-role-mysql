@@ -11,10 +11,14 @@
   set_fact:
     deb_mysql_python_package: "{% if 'python3' in ansible_python_interpreter|default('') %}python3-mysqldb{% else %}python-mysqldb{% endif %}"
 
-- name: Make sure pymysql is present
-  pip:
-    name: pymysql
+- name: Ensure dependencies are installed for Debian 10
+  apt:
+    name: python3-pip
     state: present
+  when: ansible_distribution == "Debian" and ansible_distribution_major_version == '10'
+
+- name: Make sure pymysql is present
+  pip: "name=pymysql state=present"
 
 - name: Ensure MySQL Python libraries are installed.
   apt: "name={{ deb_mysql_python_package }} state=present"
