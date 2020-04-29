@@ -1,12 +1,12 @@
 ---
 - hosts: all
   remote_user: ubuntu
-  vars: 
+  vars:
     mysql_root_password_update: yes
     mysql_root_password: myrootpasswd
     overwrite_global_mycnf: no
     mysql_databases:
-      - name : "mydbname"
+      - name: "mydbname"
     mysql_users:
       - name: "myusername"
         host: "%"
@@ -14,5 +14,5 @@
         priv: "mydbname.*:ALL"
     mysql_max_allowed_packet: "64M"
 
-  roles:    
+  roles:
     - {role: ansible-role-mysql, become: yes}

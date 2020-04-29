@@ -15,7 +15,8 @@
   apt:
     name: python3-pip
     state: present
-  when: (ansible_distribution == "Debian" and ansible_distribution_major_version == '10') or (ansible_distribution == "Ubuntu" and ansible_distribution_major_version == '20')
+  when: (ansible_distribution == "Debian" and ansible_distribution_major_version == '10') or
+        (ansible_distribution == "Ubuntu" and ansible_distribution_major_version == '20')
 
 - name: Make sure pymysql is present
   pip: "name=pymysql state=present"
