@@ -85,6 +85,8 @@
 # This is usefull for debian 10
 - name: restart mysql to use some previous modifications
   service: "name={{ mysql_daemon }} state=restarted sleep=5"
+  tags:
+    - molecule-idempotence-notest
 
 - name: Remove MySQL test database.
   mysql_db: "name='test' state=absent"

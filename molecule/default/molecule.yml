@@ -19,4 +19,20 @@ provisioner:
   name: ansible
   playbooks:
     converge: ${MOLECULE_PLAYBOOK:-converge.yml}
-    idempotence: ${MOLECULE_PLAYBOOK:-idempotence.yml}
+
+#scenario:
+#  name: default     
+#  test_sequence:
+#    - lint
+#    - dependency
+#    - cleanup
+#    - destroy
+#    - syntax
+#    - create
+#    - prepare
+#    - converge
+#    #- idempotence
+#    - side_effect
+#    - verify
+#   - cleanup
+#    - destroy
