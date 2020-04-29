@@ -186,7 +186,7 @@ None.
         password: similarly-secure-password
         priv: "example_db.*:ALL"
 
-If necessary, for example on debian 10 you may need to add in the host file in order to use python3 otherwise you can get an error when removing test database
+If necessary, for example on debian 10 or Ubuntu 20 you may need to add in the host file in order to use python3 otherwise you can get an error when removing test database
 ```
 [your_host:vars]
 ansible_python_interpreter=/usr/bin/python3
