@@ -21,7 +21,7 @@ provisioner:
     converge: ${MOLECULE_PLAYBOOK:-converge.yml}
 
 scenario:
-  name: vagrant-archlinux     
+  name: default     
   test_sequence:
     - lint
     - dependency
