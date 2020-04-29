@@ -19,6 +19,8 @@
 
 - name: Make sure pymysql is present
   pip: "name=pymysql state=present"
+  tags:
+    - molecule-idempotence-notest
 
 - name: Ensure MySQL Python libraries are installed.
   apt: "name={{ deb_mysql_python_package }} state=present"
