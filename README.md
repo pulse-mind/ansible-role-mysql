@@ -186,6 +186,16 @@ None.
         password: similarly-secure-password
         priv: "example_db.*:ALL"
 
+If necessary, for example on debian 10 you may need to add in the host file in order to use python3 otherwise you can get an error when removing test database
+```
+[your_host:vars]
+ansible_python_interpreter=/usr/bin/python3
+```
+The error would be
+```
+fatal: [192.168.1.77]: FAILED! => {"changed": false, "msg": "unable to connect to database, check login_user and login_password are correct or /root/.my.cnf has the credentials. Exception message: (1698, \"Access denied for user 'root'@'localhost'\")"}
+```
+
 ## License
 
 MIT / BSD
